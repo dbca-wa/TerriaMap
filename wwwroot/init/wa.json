@@ -1,22 +1,30 @@
-{
-    "homeCamera": {
-        "west": 112,
-        "south": -35.3,
-        "east": 129,
-        "north": -13.4
-    },
-    "services": [],
-    "catalog": [
-        {
-            "name": "Western Australian Government",
-            "type": "group",
-            "isPromoted": true,
-            "isOpen": true
-        },
-        {
-            "name": "National Data Sets",
-            "type": "group",
-            "isOpen": false
-        }
-    ]
-}
+{                                                                                                   
+    "homeCamera": {"west": 112, "south": -35.3, "east": 129, "north": -13.4},                       
+    "services": [],                                                                                 
+    "proxyDomains": ["geoserver-123.aodn.org.au", "catalogue.beta.data.wa.gov.au"],                 
+    "catalog": [                                                                                    
+    {                                                                                               
+        "name": "Western Australian Government",                                                                   
+        "type": "ckan",                                                                             
+        "url": "https://catalogue.data.wa.gov.au/",                                              
+        "isPromoted": true,                                                                         
+        "isOpen": false,                                                                            
+        "groupBy": "organization",                                                                  
+        "minimumMaxScaleDenominator": 10000000000,                                                  
+        "filterByWmsGetCapabilities": false,                                                        
+        "filterQuery": ["fq=+(res_format%3awms%20OR%20res_format%3aWMS%20OR%20res_format%3acsv-geo-au%20OR%20res_format%3aaus-geo-csv%20OR%20res_format%3AGeoJSON%20OR%20res_format%3AKML%20OR%20res_format%3Akml)"],
+        "includeCsv": true,                                                                         
+        "includeGeoJson": true,                                                                     
+        "includeWms": true,                                                                         
+        "includeKml": true,                                                                         
+        "allowEntireWmsServers": true                                                               
+    },                                                                                              
+    {                                                                                               
+        "name": "Integrated Marine Observing System (IMOS)",                                        
+        "type": "wms-getCapabilities",                                                              
+        "url": "https://geoserver-123.aodn.org.au/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",          
+        "isPromoted": true,                                                                         
+        "includeWms": true                                                                          
+    }                                                                                               
+    ]                                                                                               
+}  

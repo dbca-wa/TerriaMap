@@ -1,11 +1,17 @@
 {
     /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
     initializationUrls: [
-        "terria"
+       "dbca",                                                                                     
+       "wa",   
+       "ckan",                                                                                    
+       "csiro",                                                                                    
+       "ga",                                                                                       
+       "dgakml",
+       "terria"                                                                                
     ],
     parameters: {
         googleUrlShortenerKey: null,
-        googleAnalyticsKey: null,
+        googleAnalyticsKey: "UA-45890579-2",
         googleAnalyticsOptions: null,
         /* Text that appears at the bottom of the map */
         disclaimer: {
@@ -39,12 +45,12 @@
             link: "http://www.example.com"
         },*/
         // This is used in various text messages. You should also set <title> in index.html
-        appName: "Terria Map",
+        appName: "DBCA Map",
 
         // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
             "",
-            "<a target=\"_blank\" href=\"https://terria.io\"><img src=\"images/terria_logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+            "<a target=\"_blank\" href=\"https://www.dbca.wa.gov.au/\"><img src=\"https://data.dbca.wa.gov.au/logo.png\" height=\"52\" title=\"Version: {{version}}\" /></a>",
             ""
         ],
         // Shown when things go wrong.
@@ -68,7 +74,7 @@
         // "showWelcomeMessage": false,
 
         // True to display in-app guides.
-        // "showInAppGuides": false,
+        "showInAppGuides": true,
 
         // True to display new feature popups.
         // "showFeaturePrompts": false,

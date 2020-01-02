@@ -1,0 +1,47 @@
+{                                                                                                   
+    "homeCamera": {"west": 112, "south": -35.3, "east": 129, "north": -13.4},                       
+    "services": [],                                                                                 
+    "proxyDomains": ["data.dbca.wa.gov.au"], 
+    "corsDomains": [ "data.dbca.wa.gov.au" ],                                                       
+    "catalog": [                                                                                    
+    {                                                                                               
+        "type": "group",                                                                            
+        "name": "DBCA data",                                                                        
+        "description": "Internal datasets of DBCA",                                                 
+        "isPromoted": true,                                                                         
+        "isOpen": true,                                                                             
+        "items": [                                                                                  
+        {                                                                                           
+            "name": "Internal Data Catalogue",                                                      
+            "type": "ckan",                                                                         
+            "url": "https://data.dbca.wa.gov.au",                                                   
+            "isPromoted": true,                                                                     
+            "isOpen": false,                                                                        
+            "groupBy": "organization",                                                              
+            "minimumMaxScaleDenominator": 1e10,                                                     
+            "filterByWmsGetCapabilities": false,                                                    
+            "filterQuery": [                                                                        
+                "q=res_format:WMS",                                                                 
+                "q=res_format:csv-geo-au",                                                          
+                "q=res_format:aus-geo-csv",                                                         
+                "q=res_format:GeoJSON",                                                             
+                "q=res_format:KML",                                                                 
+                "q=res_format:%22Esri%20REST%22"                                                    
+            ],                                                                                      
+            "includeCsv": true,                                                                     
+            "includeGeoJson": true,                                                                 
+            "includeWms": true,                                                                     
+            "includeKml": true,                                                                     
+            "allowEntireWmsServers": true                                                           
+        },                                                                                          
+        {                                                                                           
+            "name": "Corporate GIS layers (CDDP / V-drive)",                                        
+            "type": "wms-getCapabilities",                                                          
+            "url": "https://kmi.dbca.wa.gov.au/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",                          
+            "includeWms": true,                                                                     
+            "wmsParameters": {"tiled" : true}                                                       
+        }                                                                                           
+        ]                                                                                           
+    }                                                                                               
+    ]                                                                                               
+} 
