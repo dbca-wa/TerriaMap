@@ -1,8 +1,16 @@
 {                                                                                                   
     "homeCamera": {"west": 112, "south": -35.3, "east": 129, "north": -13.4},                       
     "services": [],                                                                                 
-    "proxyDomains": ["data.dbca.wa.gov.au"], 
-    "corsDomains": [ "data.dbca.wa.gov.au" ],                                                       
+    // "proxyDomains": ["data.dbca.wa.gov.au"], 
+
+    // servers that allow CORS
+    "corsDomains": [ "data.dbca.wa.gov.au" ],
+
+    // servers that disallow CORS: 
+    // add to devserverconfig.json > allowProxyFor whitelist
+    // do not add to corsDomains
+    // ?? add to proxyDomains ??
+
     "catalog": [                                                                                    
     {                                                                                               
         "type": "group",                                                                            
@@ -37,7 +45,7 @@
         {                                                                                           
             "name": "Corporate GIS layers (CDDP / V-drive)",                                        
             "type": "wms-getCapabilities",                                                          
-            "url": "https://kmi.dbca.wa.gov.au/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities",                          
+            "url": "https://kmi.dbca.wa.gov.au/geoserver/ows",                          
             "includeWms": true,                                                                     
             "wmsParameters": {"tiled" : true}                                                       
         }                                                                                           
